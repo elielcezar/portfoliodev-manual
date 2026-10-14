@@ -1,0 +1,701 @@
+/* Annotation layer: the page shown as a design file, with its metadata.
+   Decorative only (aria-hidden, no pointer events). Remove this file and
+   notas.js and the page is unchanged. Values come from the DOM via notas.js. */
+
+[data-host] {
+  position: relative;
+}
+
+.nota {
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+  color: var(--blue);
+  font: 700 0.72rem/1 var(--text);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.nota svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* frame label: sits in the gap above a plate, like a frame name in the canvas */
+.nota--frame {
+  top: -30px;
+  left: var(--side);
+  right: var(--side);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.nota--frame b {
+  font-weight: 800;
+}
+
+.nota--frame span:first-child::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 8px;
+  border: 1px solid currentColor;
+  vertical-align: -1px;
+}
+
+/* dimension line: ticks at both ends, label breaks the line */
+.cota {
+  position: relative;
+  display: block;
+  height: 14px;
+  text-align: center;
+  color: var(--blue);
+  font: 700 0.72rem/14px var(--text);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.cota::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(currentColor, currentColor) 0 50% / 100% 1px no-repeat,
+    linear-gradient(currentColor, currentColor) 0 0 / 1px 100% no-repeat,
+    linear-gradient(currentColor, currentColor) 100% 0 / 1px 100% no-repeat;
+}
+
+.cota span {
+  position: relative;
+  padding-inline: 8px;
+  background: var(--white);
+}
+
+.nota--regua {
+  top: 10px;
+  left: var(--side);
+  right: var(--side);
+}
+
+/* column ruler above a grid: one dimension per span */
+.regua {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: var(--gutter);
+  margin: -34px 0 20px;
+  pointer-events: none;
+}
+
+.regua .cota {
+  min-width: 0;
+}
+
+.regua .cota span {
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+/* selection: outline, square handles and a size pill */
+.sel {
+  position: absolute;
+  inset: var(--sel-inset, 0);
+  z-index: 3;
+  pointer-events: none;
+  outline: 1px solid var(--blue);
+}
+
+.sel i {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background: var(--white);
+  border: 1px solid var(--blue);
+}
+
+.sel i:nth-of-type(1) { left: -4px; top: -4px; }
+.sel i:nth-of-type(2) { right: -4px; top: -4px; }
+.sel i:nth-of-type(3) { left: -4px; bottom: -4px; }
+.sel i:nth-of-type(4) { right: -4px; bottom: -4px; }
+
+.sel em {
+  position: absolute;
+  left: 50%;
+  bottom: -30px;
+  translate: -50% 0;
+  padding: 5px 8px;
+  background: var(--blue);
+  color: var(--white);
+  font: 700 0.72rem/1 var(--text);
+  font-style: normal;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* component chip: name of the piece and its measured height */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 8px;
+  background: var(--blue);
+  color: var(--white);
+}
+
+/* comment: square pin and a flat balloon, signed */
+.comentario {
+  position: absolute;
+  z-index: 4;
+  pointer-events: none;
+  text-transform: none;
+  letter-spacing: 0;
+  white-space: normal;
+}
+
+.pin {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  background: var(--blue);
+  color: var(--white);
+  font: 800 0.75rem/1 var(--display);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+}
+
+.pin::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  border: 6px solid transparent;
+  border-top-color: var(--blue);
+  border-left-color: var(--blue);
+}
+
+.balao {
+  position: absolute;
+  left: 36px;
+  top: 0;
+  width: 212px;
+  padding: 10px 12px 11px;
+  background: var(--white);
+  border: 1px solid var(--blue);
+  color: var(--black);
+  font: 500 0.82rem/1.35 var(--text);
+  text-wrap: pretty;
+}
+
+.balao b {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  color: var(--blue);
+  font: 800 0.72rem/1 var(--display);
+  letter-spacing: 0.04em;
+}
+
+.balao b::before {
+  content: "E";
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  background: var(--blue);
+  color: var(--white);
+  font-size: 0.72rem;
+}
+
+.balao--left {
+  left: auto;
+  right: 36px;
+}
+
+.contato .pin {
+  background: var(--white);
+  color: var(--blue);
+}
+
+.contato .pin::after {
+  border-top-color: var(--white);
+  border-left-color: var(--white);
+}
+
+.contato .balao {
+  border-color: var(--white);
+}
+
+/* system plate (06) */
+.ds {
+  display: grid;
+  gap: clamp(44px, 5vw, 72px);
+}
+
+.ds h3 {
+  font: 700 0.78rem/1 var(--text);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue);
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--black);
+  margin-bottom: 20px;
+}
+
+.ds__cores ul {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  column-gap: var(--gutter);
+  row-gap: 28px;
+}
+
+.amostra {
+  display: block;
+  height: clamp(72px, 9vw, 128px);
+  border: 1px solid var(--black);
+}
+
+.ds__cores li b {
+  display: block;
+  margin-top: 12px;
+  font: 800 1.05rem/1.1 var(--display);
+  letter-spacing: -0.01em;
+}
+
+.ds__cores li code,
+.ds__cores li small {
+  display: block;
+  margin-top: 5px;
+  font: 600 0.78rem/1.25 var(--text);
+  color: var(--soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.ds__cores li code {
+  color: var(--blue);
+}
+
+.ds__tipos {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: var(--gutter);
+}
+
+.ds__tipos > div:first-of-type {
+  grid-column: 1 / 8;
+}
+
+.ds__tipos > div:last-of-type {
+  grid-column: 8 / 13;
+}
+
+.ds__tipos h3 {
+  grid-column: 1 / -1;
+}
+
+.especime {
+  font-size: clamp(5rem, 10vw, 8rem);
+  line-height: 0.82;
+}
+
+.especime--display {
+  font-family: var(--display);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+}
+
+.especime--text {
+  font-family: var(--text);
+  font-weight: 400;
+}
+
+.ds__tipos dl {
+  margin-top: 18px;
+  display: grid;
+  gap: 8px;
+}
+
+.ds__tipos dl div {
+  display: grid;
+  grid-template-columns: 7.5em 1fr;
+  gap: 12px;
+  padding-top: 8px;
+  border-top: 1px solid var(--rule);
+}
+
+.ds__tipos dt {
+  font: 700 0.72rem/1.4 var(--text);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.ds__tipos dd {
+  font: 600 0.95rem/1.3 var(--display);
+}
+
+.ds__medidas ul {
+  display: grid;
+  gap: 18px;
+}
+
+.ds__medidas li {
+  display: grid;
+  grid-template-columns: 8em 1fr;
+  gap: 16px;
+  align-items: center;
+}
+
+.ds__medidas strong {
+  font: 800 1.05rem/1.1 var(--display);
+}
+
+.ds__medidas strong small {
+  display: block;
+  margin-top: 4px;
+  font: 600 0.78rem/1.2 var(--text);
+  color: var(--soft);
+}
+
+.ds__medidas .cota {
+  max-width: 100%;
+}
+
+.ds__pecas ul {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: var(--gutter);
+  row-gap: 36px;
+}
+
+.ds__pecas li {
+  grid-column: span 4;
+  display: grid;
+  gap: 14px;
+  align-content: start;
+  min-width: 0;
+}
+
+.ds__pecas li > small {
+  font: 700 0.72rem/1 var(--text);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.ds__pecas li > div {
+  display: flex;
+  min-height: 72px;
+  align-items: center;
+  padding: 12px;
+  border: 1px dashed var(--blue);
+}
+
+.ds__pecas .tag {
+  font: 800 0.75rem/1 var(--display);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--blue);
+  padding: 6px 8px;
+}
+
+.ds__pecas .toggle {
+  pointer-events: none;
+}
+
+.ds__pecas .btn,
+.ds__pecas .link {
+  pointer-events: none;
+}
+
+.ds__pecas .btn:hover {
+  background: var(--blue);
+}
+
+.ds__pecas .link:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
+.ds__pecas .arrow {
+  pointer-events: none;
+}
+
+.ds__pecas .arrow:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
+@media (max-width: 900px) {
+  .regua,
+  .nota--regua {
+    display: none;
+  }
+
+  .nota--frame {
+    top: -26px;
+  }
+
+  .ds__cores ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .ds__tipos > div:first-of-type,
+  .ds__tipos > div:last-of-type {
+    grid-column: 1 / -1;
+  }
+
+  .ds__tipos > div:last-of-type {
+    margin-top: 36px;
+  }
+
+  .ds__pecas li {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 600px) {
+  .nota--frame span:last-child {
+    display: none;
+  }
+
+  .ds__cores ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ds__medidas li {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .ds__pecas li {
+    grid-column: 1 / -1;
+  }
+}
+
+/* placement helpers */
+.sig {
+  --sig: clamp(4.6rem, 13.4vw, 12.6rem);
+}
+
+.comentario--nome {
+  left: calc(var(--sig) * 3.25);
+  top: calc(var(--sig) * 0.1);
+}
+
+.comentario--nome .balao {
+  width: 200px;
+}
+
+
+.hero .actions {
+  margin-top: 46px;
+}
+
+/* right-anchored comments: the pin hangs left of the anchor, never past the margin */
+.comentario--r .pin {
+  left: -26px;
+}
+
+.comentario--r .pin::after {
+  left: auto;
+  right: 0;
+  border-left-color: transparent;
+  border-right-color: var(--blue);
+}
+
+.contato .comentario--r .pin::after {
+  border-right-color: var(--white);
+}
+
+.ds__medidas .cota {
+  overflow: visible;
+}
+
+.ds__medidas .cota span {
+  position: absolute;
+  left: calc(100% + 10px);
+  top: 0;
+  padding: 0;
+  background: none;
+}
+
+:root {
+  --prot: clamp(14px, 1.6vw, 22px);
+}
+
+/* frame size: sits at the foot of each plate, in the same slot as the hero legend */
+.nota--frame {
+  top: auto;
+  bottom: calc(var(--step) * 0.42);
+  left: auto;
+  right: var(--side);
+  display: flex;
+  gap: 10px;
+}
+
+.contato .nota--frame {
+  bottom: 28px;
+  color: var(--white);
+}
+
+@media (max-width: 900px) {
+  .nota--frame {
+    top: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .nota--frame span:last-child {
+    display: inline;
+  }
+}
+
+/* comment 3 hangs below the table, tied to its last row by a leader */
+.comentario--atual {
+  left: 0;
+  top: auto;
+  bottom: -70px;
+}
+
+
+/* vertical dimension: ticks at both ends, label to the left */
+.cota--v {
+  width: 14px;
+  height: 100%;
+  background:
+    linear-gradient(currentColor, currentColor) 50% 0 / 1px 100% no-repeat,
+    linear-gradient(currentColor, currentColor) 0 0 / 100% 1px no-repeat,
+    linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat;
+}
+
+.cota--v::before {
+  display: none;
+}
+
+.cota--v span {
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  translate: 0 -50%;
+  padding: 0;
+  background: none;
+  line-height: 1;
+}
+
+.nota--respiro {
+  right: calc(var(--side) + 150px);
+  bottom: 0;
+  width: 14px;
+  height: var(--step);
+}
+
+.nota--pad {
+  right: 0;
+  bottom: 0;
+  width: 14px;
+  height: 22px;
+}
+
+.ds__pecas .toggle {
+  margin-left: 0;
+}
+
+
+
+
+/* comments: originals only mark the anchor; the visible copy lives outside the layout */
+.nota.comentario {
+  visibility: hidden;
+}
+
+@media (max-width: 600px) {
+  .nota--respiro,
+  .nota--pad {
+    display: none;
+  }
+}
+
+.margem {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.margem .comentario {
+  visibility: visible;
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  display: block;
+  margin: 0;
+  right: auto;
+  bottom: auto;
+}
+
+.margem .pin {
+  left: 0;
+  top: 0;
+}
+
+.margem .pin::before {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 13px;
+  width: 14px;
+  height: 1px;
+  background: var(--blue);
+}
+
+.margem .pin::after {
+  left: 0;
+  right: auto;
+  border-left-color: var(--blue);
+  border-right-color: transparent;
+}
+
+.margem .balao,
+.margem .balao--left {
+  left: 36px;
+  right: auto;
+  width: var(--w, 212px);
+  display: block;
+}
+
+.margem--azul .pin {
+  background: var(--white);
+  color: var(--blue);
+}
+
+.margem--azul .pin::before {
+  background: var(--white);
+}
+
+.margem--azul .pin::after {
+  border-top-color: var(--white);
+  border-left-color: var(--white);
+}
+
+.margem--azul .balao {
+  border-color: var(--white);
+}
+
+.prancha.hero .nota.chip{
+  color: var(--blue);
+  background: transparent;
+}

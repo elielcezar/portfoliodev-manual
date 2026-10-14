@@ -1,10 +1,9 @@
 :root {
   --white: #ffffff;
   --black: #111111;
-  --green: #00653b;
-  --green-deep: #004d2d;
+  --blue-deep: #124d94;
   --blue: #1866c1;
-  --green-mist: #e3eee8;
+  --blue-mist: #e4edf8;
   --rule: #dcdfda;
   --soft: #4a4d49;
   --display: "Schibsted Grotesk", "Arial Narrow", sans-serif;
@@ -251,7 +250,7 @@ main,
 }
 
 .btn:hover {
-  background: var(--green-deep);
+  background: var(--blue-deep);
 }
 
 .btn:hover svg {
@@ -276,7 +275,7 @@ main,
 }
 
 .btn--inverse:hover {
-  background: var(--green-mist);
+  background: var(--blue-mist);
 }
 
 .link {
@@ -509,7 +508,7 @@ main,
 }
 
 .prancha__head h2 {
-  grid-column: 3 / 9;
+  grid-column: 2 / 9;
   font: 900 clamp(2.8rem, 5.6vw, 5.4rem)/0.9 var(--display);
   letter-spacing: -0.045em;
 }
@@ -520,6 +519,7 @@ main,
   color: var(--soft);
   padding-bottom: 0.4em;
   text-wrap: pretty;
+  display: none;
 }
 
 /* career table */
@@ -583,7 +583,7 @@ main,
 }
 
 .tabela li:hover {
-  background: linear-gradient(90deg, var(--green-mist), transparent 70%);
+  background: linear-gradient(90deg, var(--blue-mist), transparent 70%);
 }
 
 /* projects viewer */
@@ -606,7 +606,7 @@ main,
   grid-template-columns: 2.4em 1fr;
   align-items: baseline;
   text-align: left;
-  padding: 11px 0;
+  padding: 15px 0;
   border: 0;
   border-bottom: 1px solid var(--rule);
   background: none;
@@ -631,7 +631,7 @@ main,
   color: var(--black);
   font-weight: 800;
   padding-left: 10px;
-  background: var(--green-mist);
+  background: var(--blue-mist);
 }
 
 .viewer__index button[aria-current="true"] b {
@@ -821,7 +821,7 @@ main,
 }
 
 .contato .prancha__head p {
-  color: var(--green-mist);
+  color: var(--blue-mist);
 }
 
 .contato__body {
@@ -854,7 +854,7 @@ main,
   font: 700 0.78rem/1 var(--text);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--green-mist);
+  color: var(--blue-mist);
 }
 
 .contato__list b {
@@ -891,6 +891,15 @@ main,
   padding-block: 24px 32px;
   font-size: 0.85rem;
   color: var(--soft);
+}
+
+#ferramentas .prancha__head{
+  margin-bottom: 32px;
+}
+
+#sistema{
+  padding: 0;
+  margin: 50px auto;
 }
 
 @media (max-width: 1100px) {

@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-14T12:00:00.000Z",
+  "title": "Design System: Eliel Cezar · Manual de identidade profissional",
+  "extensions": {
+    "colorMeta": {
+      "cota-blue": {
+        "role": "primary",
+        "displayName": "Azul de Cota",
+        "canonical": "#1866c1",
+        "tonalRamp": [
+          "#0b2a50",
+          "#0f3d75",
+          "#1452a0",
+          "#1866c1",
+          "#4a8ad4",
+          "#7aaae0",
+          "#b0cdee",
+          "#dce9f7"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Papel",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#d9d9d9",
+          "#e3e3e3",
+          "#ececec",
+          "#f2f2f2",
+          "#f7f7f7",
+          "#fafafa",
+          "#fdfdfd",
+          "#ffffff"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Tinta",
+        "canonical": "#111111",
+        "tonalRamp": [
+          "#111111",
+          "#2a2a2a",
+          "#444444",
+          "#5e5e5e",
+          "#787878",
+          "#929292",
+          "#bcbcbc",
+          "#e0e0e0"
+        ]
+      },
+      "graphite": {
+        "role": "neutral",
+        "displayName": "Grafite",
+        "canonical": "#4a4d49",
+        "tonalRamp": [
+          "#1a1b19",
+          "#2c2e2b",
+          "#3b3d3a",
+          "#4a4d49",
+          "#6c6f6b",
+          "#93968f",
+          "#bdbfba",
+          "#e3e4e1"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Filete",
+        "canonical": "#dcdfda",
+        "tonalRamp": [
+          "#5a5d58",
+          "#7a7d77",
+          "#999c96",
+          "#b8bbb5",
+          "#dcdfda",
+          "#e6e8e4",
+          "#f0f1ee",
+          "#f8f9f7"
+        ]
+      },
+      "deep-blue": {
+        "role": "secondary",
+        "displayName": "Azul Profundo",
+        "canonical": "#124d94",
+        "tonalRamp": [
+          "#06182f",
+          "#0a2a52",
+          "#0d3a70",
+          "#124d94",
+          "#3b73b3",
+          "#6b97c9",
+          "#a2bfe0",
+          "#d3e1f1"
+        ],
+        "cssName": "--blue-deep"
+      },
+      "blue-mist": {
+        "role": "secondary",
+        "displayName": "Azul Névoa",
+        "canonical": "#e4edf8",
+        "tonalRamp": [
+          "#1c2633",
+          "#3a4a5f",
+          "#5d7391",
+          "#869db8",
+          "#a9bdd6",
+          "#c5d4e8",
+          "#e4edf8",
+          "#f3f7fc"
+        ],
+        "cssName": "--blue-mist"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Assinatura",
+        "purpose": "Nome 'ELIEL CEZAR' no hero, caixa alta."
+      },
+      "headline": {
+        "displayName": "Título de prancha",
+        "purpose": "h2 de cada prancha."
+      },
+      "title": {
+        "displayName": "Título de item",
+        "purpose": "Empresa, cargo, nome de projeto, botões."
+      },
+      "body": {
+        "displayName": "Corpo",
+        "purpose": "Texto de apoio e descrições."
+      },
+      "label": {
+        "displayName": "Rótulo de cota",
+        "purpose": "Metas, cotas e especificações em caixa alta azul."
+      },
+      "annotation": {
+        "displayName": "Anotação",
+        "purpose": "Cotas, rótulo de frame, pílulas de medida e chips da camada de anotação."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Linhas do hero, ícones e sublinhados."
+      },
+      {
+        "name": "draw-line",
+        "value": "1.4s scale 0→1 (delay 0.18s na 2ª linha)",
+        "purpose": "Desenho das linhas de base do hero na carga."
+      },
+      {
+        "name": "swap-fade",
+        "value": "0.3s opacity (troca em 180ms)",
+        "purpose": "Troca de imagem no visualizador de trabalhos."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "balloons-hidden",
+        "value": "1200px"
+      },
+      {
+        "name": "wide",
+        "value": "1100px"
+      },
+      {
+        "name": "tablet",
+        "value": "900px"
+      },
+      {
+        "name": "phone",
+        "value": "600px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ação principal (baixar currículo).",
+      "html": "<a class=\"ds-btn\" href=\"#\">Baixar currículo<svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" aria-hidden=\"true\"><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" d=\"M12 3v14M5.5 11l6.5 6.5 6.5-6.5M4 21h16\"/></svg></a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;gap:12px;height:56px;padding:0 24px;background:#1866c1;color:#fff;font:800 1.05rem/1 'Schibsted Grotesk',sans-serif;text-decoration:none;transition:background-color .2s}.ds-btn svg{transition:translate .35s cubic-bezier(.16,1,.3,1)}.ds-btn:hover{background:#124d94}.ds-btn:hover svg{translate:0 3px}.ds-btn:focus-visible{outline:2px solid #1866c1;outline-offset:3px}"
+    },
+    {
+      "name": "Outline Link",
+      "kind": "button",
+      "refersTo": "link-outline",
+      "description": "Ação secundária (LinkedIn, GitHub, ver o site).",
+      "html": "<a class=\"ds-link\" href=\"#\">LinkedIn<svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" aria-hidden=\"true\"><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" d=\"M7 17L17 7M8 6h10v10\"/></svg></a>",
+      "css": ".ds-link{display:inline-flex;align-items:center;gap:8px;height:56px;padding:0 18px;border:1px solid #111;color:#111;font:700 1rem/1 'Schibsted Grotesk',sans-serif;text-decoration:none;transition:background-color .2s,color .2s}.ds-link svg{transition:translate .35s cubic-bezier(.16,1,.3,1)}.ds-link:hover{background:#111;color:#fff}.ds-link:hover svg{translate:2px -2px}.ds-link:focus-visible{outline:2px solid #1866c1;outline-offset:3px}"
+    },
+    {
+      "name": "Grid Toggle",
+      "kind": "button",
+      "refersTo": "toggle",
+      "description": "Liga e desliga a malha de construção.",
+      "html": "<button class=\"ds-toggle\" aria-pressed=\"true\">Malha</button>",
+      "css": ".ds-toggle{position:relative;height:34px;padding:0 12px 0 30px;border:1px solid #111;background:#111;color:#fff;font:700 .85rem/1 'Schibsted Grotesk',sans-serif;cursor:pointer}.ds-toggle::before{content:'';position:absolute;left:10px;top:50%;width:12px;height:12px;translate:0 -50%;background:repeating-linear-gradient(90deg,currentColor 0 1px,transparent 1px 4px);border:1px solid currentColor}.ds-toggle[aria-pressed='false']{background:#fff;color:#111}.ds-toggle:focus-visible{outline:2px solid #1866c1;outline-offset:3px}"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Link do cabeçalho com número azul e sublinhado que cresce.",
+      "html": "<a class=\"ds-nav\" href=\"#\"><b>02</b> Trajetória</a>",
+      "css": ".ds-nav{display:inline-flex;gap:6px;padding-block:6px;font:600 .95rem/1 'Schibsted Grotesk',sans-serif;color:#111;text-decoration:none;background:linear-gradient(currentColor,currentColor) left bottom/0 1px no-repeat;transition:background-size .35s cubic-bezier(.16,1,.3,1)}.ds-nav b{color:#1866c1;font-weight:800;font-variant-numeric:tabular-nums}.ds-nav:hover{background-size:100% 1px}.ds-nav:focus-visible{outline:2px solid #1866c1;outline-offset:3px}"
+    },
+    {
+      "name": "Current Tag",
+      "kind": "chip",
+      "refersTo": "tag-current",
+      "description": "Marca o cargo atual na trajetória.",
+      "html": "<strong class=\"ds-tag\">Atual</strong>",
+      "css": ".ds-tag{display:inline-block;padding:6px 8px;background:#1866c1;color:#fff;font:800 .75rem/1 'Schibsted Grotesk',sans-serif;letter-spacing:.08em;text-transform:uppercase}"
+    },
+    {
+      "name": "Index Item",
+      "kind": "custom",
+      "refersTo": "viewer-index",
+      "description": "Item do índice do visualizador de trabalhos; o ativo ganha fundo azul névoa.",
+      "html": "<ol class=\"ds-index\"><li><button>01 <span>Assaí Atacadista</span></button></li><li><button aria-current=\"true\"><b>02</b> <span>Portal Retail Media</span></button></li></ol>",
+      "css": ".ds-index{list-style:none;margin:0;padding:0;border-top:1px solid #111;width:260px}.ds-index button{width:100%;display:grid;grid-template-columns:2.4em 1fr;text-align:left;padding:11px 0;border:0;border-bottom:1px solid #dcdfda;background:none;cursor:pointer;font:600 1rem/1.25 'Schibsted Grotesk',sans-serif;color:#4a4d49;transition:color .2s,padding .35s cubic-bezier(.16,1,.3,1)}.ds-index button:hover{color:#111}.ds-index button[aria-current='true']{color:#111;font-weight:800;padding-left:10px;background:#e4edf8}.ds-index b{color:#1866c1}"
+    },
+    {
+      "name": "Pranchas Header",
+      "kind": "custom",
+      "refersTo": "prancha-head",
+      "description": "Cabeçalho de prancha: filete preto, número azul e título grande.",
+      "html": "<header class=\"ds-head\"><span>03</span><h2>Trabalhos</h2></header>",
+      "css": ".ds-head{display:grid;grid-template-columns:5em 1fr;align-items:end;border-top:2px solid #111;padding-top:18px}.ds-head span{align-self:start;font:800 1.05rem/1 'Schibsted Grotesk',sans-serif;color:#1866c1;font-variant-numeric:tabular-nums;padding-top:.4em}.ds-head h2{margin:0;font:900 3.6rem/.9 'Schibsted Grotesk',sans-serif;letter-spacing:-.045em}"
+    },
+    {
+      "name": "Cota",
+      "kind": "custom",
+      "refersTo": "annotation",
+      "description": "Dimensão horizontal com marcas nas pontas e rótulo azul interrompendo a linha.",
+      "html": "<span class=\"ds-cota\"><span>1312 PX</span></span>",
+      "css": ".ds-cota{position:relative;display:block;height:14px;width:320px;text-align:center;color:#1866c1;font:700 .72rem/14px 'Hanken Grotesk',sans-serif;letter-spacing:.08em;text-transform:uppercase;font-variant-numeric:tabular-nums;background:linear-gradient(currentColor,currentColor) 0 50%/100% 1px no-repeat,linear-gradient(currentColor,currentColor) 0 0/1px 100% no-repeat,linear-gradient(currentColor,currentColor) 100% 0/1px 100% no-repeat}.ds-cota span{padding-inline:8px;background:#fff}"
+    },
+    {
+      "name": "Seleção com medida",
+      "kind": "custom",
+      "refersTo": "annotation-handle",
+      "description": "Contorno azul de 1px, alças quadradas de 7px e pílula de medida.",
+      "html": "<div class=\"ds-sel\"><i></i><i></i><i></i><i></i><em>56 PX</em></div>",
+      "css": ".ds-sel{position:relative;width:160px;height:56px;outline:1px solid #1866c1;margin-bottom:36px}.ds-sel i{position:absolute;width:7px;height:7px;background:#fff;border:1px solid #1866c1}.ds-sel i:nth-of-type(1){left:-4px;top:-4px}.ds-sel i:nth-of-type(2){right:-4px;top:-4px}.ds-sel i:nth-of-type(3){left:-4px;bottom:-4px}.ds-sel i:nth-of-type(4){right:-4px;bottom:-4px}.ds-sel em{position:absolute;left:50%;bottom:-30px;translate:-50% 0;padding:5px 8px;background:#1866c1;color:#fff;font:700 .72rem/1 'Hanken Grotesk',sans-serif;font-style:normal;letter-spacing:.06em;white-space:nowrap}"
+    },
+    {
+      "name": "Comentário",
+      "kind": "custom",
+      "refersTo": "annotation-pin",
+      "description": "Pino quadrado azul numerado e balão branco plano assinado.",
+      "html": "<div class=\"ds-com\"><span class=\"ds-pin\">1</span><p class=\"ds-balao\"><b>Eliel</b>Comentário sobre o elemento.</p></div>",
+      "css": ".ds-com{position:relative;height:90px;width:260px}.ds-pin{position:absolute;left:0;top:0;display:grid;place-items:center;width:26px;height:26px;background:#1866c1;color:#fff;font:800 .75rem/1 'Schibsted Grotesk',sans-serif}.ds-pin::after{content:'';position:absolute;left:0;bottom:-6px;border:6px solid transparent;border-top-color:#1866c1;border-left-color:#1866c1}.ds-balao{position:absolute;left:36px;top:0;width:212px;margin:0;padding:10px 12px 11px;background:#fff;border:1px solid #1866c1;color:#111;font:500 .82rem/1.35 'Hanken Grotesk',sans-serif}.ds-balao b{display:flex;align-items:center;gap:8px;margin-bottom:6px;color:#1866c1;font:800 .72rem/1 'Schibsted Grotesk',sans-serif;letter-spacing:.04em}.ds-balao b::before{content:'E';display:grid;place-items:center;width:18px;height:18px;background:#1866c1;color:#fff}"
+    },
+    {
+      "name": "Chip de componente",
+      "kind": "chip",
+      "refersTo": "annotation-chip",
+      "description": "Nome e medida da peça, branco sobre azul.",
+      "html": "<span class=\"ds-chip\">Button / Primary · 56 PX</span>",
+      "css": ".ds-chip{display:inline-flex;align-items:center;gap:8px;padding:5px 8px;background:#1866c1;color:#fff;font:700 .72rem/1 'Hanken Grotesk',sans-serif;letter-spacing:.08em;text-transform:uppercase;font-variant-numeric:tabular-nums}"
+    }
+  ],
+  "narrative": {
+    "northStar": "O Arquivo do Designer",
+    "overview": "O site é um arquivo de projeto aberto sobre a mesa: a folha branca mostra como foi construída. A malha de 12 colunas fica visível, linhas de base e áreas de proteção são desenhadas, e cada seção é uma prancha numerada com legenda.\n\nO tom é técnico e seguro, sem cerimônia. Preto desenha a estrutura, azul é a tinta da anotação, e variações de azul (profundo e névoa) respondem em estado e em fundo suave.\n\nA linguagem foi ampliada com uma camada de anotação (cotas, régua de colunas, seleção, chips de componente, comentários assinados, linhas-guia e rótulo de frame), sempre visível e decorativa, e com a prancha 06 Sistema, que mostra o próprio sistema lido do DOM em tempo de execução.",
+    "keyCharacteristics": [
+      "Papel branco, tinta preta, anotação azul; azul profundo e névoa só como estado e fundo suave.",
+      "Zero raio e zero sombra: tudo é reto e plano.",
+      "A estrutura (malha, filetes, cotas) é exibida, nunca escondida.",
+      "Hierarquia por contraste de escala: títulos enormes, rótulos minúsculos em caixa alta.",
+      "Numeração de pranchas (01 a 07) como sistema de navegação e de ritmo.",
+      "Camada de anotação em azul sobre o conteúdo: aria-hidden, sem eventos de ponteiro, valores medidos no DOM, removível sem alterar a página."
+    ],
+    "rules": [
+      {
+        "name": "A Regra da Tinta de Cota",
+        "body": "Azul é anotação e ação: se um elemento é um número, uma medida, um comentário ou algo clicável principal, é azul. Texto corrido nunca é azul; o texto do balão de comentário é tinta preta, só a assinatura é azul.",
+        "section": "colors"
+      },
+      {
+        "name": "A Regra do Número Tabular",
+        "body": "Todo número de prancha, data ou contador usa font-variant-numeric: tabular-nums.",
+        "section": "typography"
+      },
+      {
+        "name": "A Regra do Plano Chapado",
+        "body": "Nada flutua: sem sombra, sem blur. Quem precisa se destacar usa filete, cor sólida ou escala.",
+        "section": "elevation"
+      },
+      {
+        "name": "A Regra da Variação Contida",
+        "body": "Azul profundo e azul névoa nunca assumem uma superfície grande; só respondem (hover, ativo, fundo suave). O bloco de contato é o azul de cota pleno; nele a camada de anotação inverte para branco.",
+        "section": "colors"
+      }
+    ],
+    "dos": [
+      "Do manter raio zero, borda de 1px e nenhuma sombra em qualquer elemento novo.",
+      "Do usar azul (#1866c1) para anotação, número e ação principal.",
+      "Do expor a estrutura: cotas, filetes e legendas com rótulos em caixa alta a 0.72 a 0.78rem e tracking 0.08em.",
+      "Do numerar pranchas e legendas, com algarismos tabulares.",
+      "Do respeitar prefers-reduced-motion e manter foco visível com contorno de 2px.",
+      "Do manter novas anotações decorativas (aria-hidden, sem ponteiro), com valores medidos do DOM e não digitados, e azul #1866c1 sobre branco (ou branco sobre o azul de contato).",
+      "Do usar o tracejado azul de 1px só para área de proteção e para caixas de peça de wireframe."
+    ],
+    "donts": [
+      "Don't introduzir cantos arredondados, sombras, gradientes decorativos ou vidro (os gradientes das cotas são só técnica para desenhar linhas de 1px).",
+      "Don't transformar a camada de anotação em interface: sem foco, sem clique, sem informação que só ela carregue.",
+      "Don't usar azul profundo ou azul névoa como superfície grande, nem azul como cor de texto corrido.",
+      "Don't esconder a malha como se fosse ruído: ela é parte da identidade (com toggle para quem prefere sem).",
+      "Don't usar mais de duas famílias tipográficas nem pesos intermediários sem papel claro."
+    ]
+  }
+}
