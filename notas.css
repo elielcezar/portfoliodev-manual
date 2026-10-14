@@ -699,3 +699,143 @@
   color: var(--blue);
   background: transparent;
 }
+
+/* the header toggle hides every marking: grid, notes, comments, rulers and the system plate */
+.no-malha .nota,
+.no-malha .margem,
+.no-malha .sel,
+.no-malha .regua,
+.no-malha .retrato__area,
+.no-malha .legenda,
+.no-malha #sistema,
+.no-malha .nav li:has(a[href="#sistema"]) {
+  display: none;
+}
+
+.no-malha .sig__line::before,
+.no-malha .sig__line::after {
+  display: none;
+}
+
+/* system plate as a quiet coda after the contact block: one thin strip of swatches, one line of type */
+#sistema {  
+  padding-bottom: clamp(28px, 3.4vw, 48px);
+}
+
+#sistema .ds {
+  gap: clamp(18px, 2.2vw, 28px);
+}
+
+#sistema .ds h3 {
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  color: var(--soft);
+  font-size: 0.72rem;
+}
+
+#sistema .ds__cores ul {
+  row-gap: 14px;
+}
+
+#sistema .amostra {
+  height: 22px;
+}
+
+#sistema .ds__cores li b {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  letter-spacing: 0;
+}
+
+#sistema .ds__cores li code,
+#sistema .ds__cores li small {
+  margin-top: 2px;
+  font-size: 0.72rem;
+  line-height: 1.2;
+}
+
+#sistema .ds__cores li small:nth-of-type(2) {
+  display: none;
+}
+
+#sistema .ds__tipos {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#sistema .ds__tipos > div:first-of-type,
+#sistema .ds__tipos > div:last-of-type {
+  grid-column: auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 20px;
+  align-items: center;
+}
+
+#sistema .especime {
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--soft);
+}
+
+#sistema .ds__tipos dl {
+  margin-top: 0;
+  gap: 4px;
+}
+
+#sistema .ds__tipos dl div {
+  grid-template-columns: 4.5em 1fr;
+  padding-top: 4px;
+}
+
+#sistema .ds__tipos dl div:last-child {
+  display: none;
+}
+
+#sistema .ds__tipos dt {
+  font-size: 0.68rem;
+}
+
+#sistema .ds__tipos dd {
+  font-size: 0.85rem;
+  color: var(--soft);
+}
+
+@media (max-width: 900px) {
+  #sistema .ds__tipos > div:last-of-type {
+    margin-top: 0;
+  }
+
+  #sistema .ds__tipos {
+    grid-template-columns: 1fr;
+    row-gap: 14px;
+  }
+}
+
+/* swatches: each one spans 2 of the 12 grid columns */
+#sistema .ds__cores ul {
+  grid-template-columns: repeat(12, 1fr);
+}
+
+#sistema .ds__cores li {
+  grid-column: span 2;
+}
+
+@media (max-width: 900px) {
+  #sistema .ds__cores ul {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  #sistema .ds__cores li {
+    grid-column: span 4;
+  }
+}
+
+@media (max-width: 600px) {
+  #sistema .ds__cores ul {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  #sistema .ds__cores li {
+    grid-column: span 6;
+  }
+}

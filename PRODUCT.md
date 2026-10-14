@@ -17,7 +17,7 @@ Um designer gráfico que virou desenvolvedor e lidera time: o próprio site é a
 
 ## Capabilities and Constraints
 - Página única em HTML, CSS e JavaScript puros, sem build nem dependências; feito à mão (afirmado no rodapé).
-- Seções (pranchas): 01 Assinatura (hero), 02 Trajetória, 03 Trabalhos (visualizador com 11 projetos, deep link `#trabalho-<id>`), 04 Ferramentas, 05 Formação, 06 Contato.
+- Seções (pranchas): 01 Assinatura (hero), 02 Trajetória, 03 Formação, 04 Trabalhos (visualizador com 11 projetos, deep link `#trabalho-<id>`), 05 Ferramentas, 06 Sistema, 07 Contato.
 - Ações: baixar currículo (PDF em `assets/docs/`), LinkedIn, GitHub, e-mail, WhatsApp.
 - Idioma: português do Brasil.
 - Em aberto: o contador "/ 11" do visualizador é fixo no HTML; a lista de projetos pode mudar.
