@@ -6,8 +6,8 @@
   --blue-mist: #e4edf8;
   --rule: #dcdfda;
   --soft: #4a4d49;
-  --display: "Schibsted Grotesk", "Arial Narrow", sans-serif;
-  --text: "Hanken Grotesk", system-ui, sans-serif;
+  --display: var(--font-display), "Arial Narrow", sans-serif;
+  --text: var(--font-text), system-ui, sans-serif;
   --gutter: clamp(16px, 2vw, 28px);
   --side: clamp(20px, 4.4vw, 64px);
   --step: clamp(88px, 11vw, 168px);
