@@ -32,7 +32,7 @@ export function Sistema() {
       </h2>
       <div className="ds">
         <div className="ds__cores">
-          <h3 data-titulo="Cor" data-conta=".ds__cores li" data-unidade="tokens" />
+          <h3 data-titulo="Cor" data-conta=".ds__cores li" data-unidade="tokens">Cores &amp; tokens</h3>
           <ul>
             {cores.map((c) => (
               <li key={c.token}>
@@ -55,7 +55,7 @@ export function Sistema() {
             <div key={t.familia} data-host={i === tipos.length - 1 ? "" : undefined}>
               {i === tipos.length - 1 && (
                 <Comentario n={7} style={{ left: 168, top: 34 }}>
-                  6 cores, duas famílias.
+                  6 cores, duas famílias tipográficas.
                 </Comentario>
               )}
               <p className={`especime ${t.classe}`} aria-hidden="true">

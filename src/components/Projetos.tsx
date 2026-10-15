@@ -106,14 +106,23 @@ export function Projetos() {
         </ol>
         <div className="viewer__stage">
           <figure className="viewer__frame" data-host="">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              className={`viewer__img${trocando ? " is-swapping" : ""}`}
-              src={PROJETOS_IMG + imagem.img}
-              width={imagem.w}
-              height={imagem.h}
-              alt={imagem.alt}
-            />
+            <a
+              className="viewer__shot"
+              href={imagem.url}
+              rel="noopener"
+              target="_blank"
+              aria-label={`Abrir o site de ${imagem.nome}`}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                key={imagem.id}
+                className={`viewer__img${trocando ? " is-swapping" : ""}`}
+                src={PROJETOS_IMG + imagem.img}
+                width={imagem.w}
+                height={imagem.h}
+                alt=""
+              />
+            </a>
             <span className="sel" aria-hidden="true">
               <i />
               <i />
@@ -121,7 +130,7 @@ export function Projetos() {
               <i />
             </span>
             <Comentario n={5} style={{ left: "7%", top: "9%" }}>
-              Frame fixo em 900 : 639. A imagem se ajusta, o layout não.
+              Janela fixa em 900 : 639. No hover, a página sobe até o rodapé.
             </Comentario>
             <figcaption className="viewer__cota">
               <span className="viewer__no">{pad(atual + 1)}</span>

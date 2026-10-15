@@ -27,7 +27,7 @@ export function Contato() {
         </header>
         <div className="contato__body" data-host="">
           <Comentario n={8} style={{ left: 0, top: 84 }}>
-            Se você chegou até aqui, este é o botão.
+            Estou feliz por ter chamado sua atenção, agora é só escolher alguma opção aqui do lado :)
           </Comentario>
           <a className="btn btn--inverse" href="/assets/docs/curriculo-eliel-cezar.pdf" download>
             Baixar currículo

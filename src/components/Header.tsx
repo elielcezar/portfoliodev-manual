@@ -50,7 +50,7 @@ export function Header() {
     <header className={`top${stuck ? " is-stuck" : ""}`}>
       <div className="wrap top__in">
         <a className="brand" href="#inicio">
-          <span>Portfolio 2026v2 [ Em Progresso ]</span>
+          <span>Portfolio [2026v2]</span>
         </a>
         <nav className="nav" aria-label="Pranchas">
           <ol>

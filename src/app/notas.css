@@ -566,7 +566,7 @@
 .comentario--atual {
   left: 0;
   top: auto;
-  bottom: -70px;
+  bottom: 0;
 }
 
 
@@ -738,7 +738,7 @@
 }
 
 #sistema .amostra {
-  height: 22px;
+  height: 42px;
 }
 
 #sistema .ds__cores li b {

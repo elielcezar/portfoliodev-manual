@@ -429,8 +429,7 @@ main,
 }
 
 .hero__pitch {
-  margin-top: 14px;
-  max-width: 50ch;
+  margin-top: 14px;  
   font-size: 1.125rem;
   color: var(--soft);
   text-wrap: pretty;
@@ -508,9 +507,10 @@ main,
 }
 
 .prancha__head h2 {
-  grid-column: 2 / 9;
+  grid-column: 1 / 9;
   font: 900 clamp(2.8rem, 5.6vw, 4.4rem)/0.9 var(--display);
   letter-spacing: -0.045em;
+  margin-left: -3px;
 }
 
 .prancha__head p {
@@ -648,12 +648,22 @@ main,
   background: var(--white);
 }
 
+.viewer__shot {
+  display: block;
+  overflow: hidden;
+}
+
 .viewer__img {
   width: 100%;
   aspect-ratio: 900 / 639;
   object-fit: cover;
-  object-position: top;
-  transition: opacity 0.3s;
+  object-position: center top;
+  transition: opacity 0.3s, object-position 3s var(--ease);
+}
+
+.viewer__shot:hover .viewer__img {
+  object-position: center bottom;
+  transition: opacity 0.3s, object-position 18s linear;
 }
 
 .viewer__img.is-swapping {
@@ -800,8 +810,7 @@ main,
   font: 700 1rem/1 var(--display);
 }
 
-.edu article p:last-child {
-  max-width: 48ch;
+.edu article p:last-child {  
   color: var(--soft);
 }
 
@@ -1084,6 +1093,10 @@ main,
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .viewer__shot:hover .viewer__img {
+    object-position: center top;
+  }
+
   html {
     scroll-behavior: auto;
   }

@@ -15,9 +15,9 @@ export const PROJETOS: Projeto[] = [
   {
     "id": "assai",
     "nome": "Assaí Atacadista",
-    "img": "assai-thumb_v2.webp",
-    "w": 900,
-    "h": 639,
+    "img": "assai.png",
+    "w": 980,
+    "h": 4291,
     "alt": "Página inicial do site do Assaí Atacadista",
     "texto": "Site oficial do Assaí Atacadista, uma das maiores redes de atacarejo do Brasil. Publica diariamente o catálogo de ofertas, notícias e conteúdos, e encontra a loja mais próxima do visitante por geolocalização.",
     "url": "https://www.assai.com.br/"
@@ -25,9 +25,9 @@ export const PROJETOS: Projeto[] = [
   {
     "id": "retail-media",
     "nome": "Portal Retail Media Assaí",
-    "img": "retail-thumb_v2.webp",
-    "w": 900,
-    "h": 639,
+    "img": "retail-media.png",
+    "w": 980,
+    "h": 2476,
     "alt": "Portal Retail Media do Assaí",
     "texto": "Portal para comercializar espaços publicitários dentro das lojas do Assaí Atacadista.",
     "url": "https://megamidiagroup.com.br/retailmedia10/"
@@ -35,9 +35,9 @@ export const PROJETOS: Projeto[] = [
   {
     "id": "churrasco",
     "nome": "Churrasco Assaí",
-    "img": "churrasco-thumb_v2.webp",
-    "w": 900,
-    "h": 639,
+    "img": "churrasco.png",
+    "w": 980,
+    "h": 2819,
     "alt": "Site Churrasco Assaí",
     "texto": "Site da ação promocional do setor de carnes do Assaí, feito em WordPress, com blog de receitas e dicas e o Churrascômetro: um app em Vue.js que calcula quanto de carne, bebida e outros itens comprar para o churrasco.",
     "url": "https://www.assai.com.br/churrascoassai/"

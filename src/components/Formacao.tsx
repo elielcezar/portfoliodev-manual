@@ -24,7 +24,7 @@ export function Formacao() {
         </article>
         <article data-host="">
           <Comentario n={4} className="comentario--r" style={{ right: 0, top: 42 }} esquerda>
-            Duas passagens, mesma casa.
+            Em 2027 pretendo iniciar um MBA em Gerenciamento de Projetos.
           </Comentario>
           <p className="edu__meta">Graduação · 2003 — 2007</p>
           <h3>Design Gráfico</h3>

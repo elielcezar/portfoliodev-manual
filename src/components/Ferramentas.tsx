@@ -1,10 +1,10 @@
 import { Comentario, Frame, Respiro } from "./Anotacoes";
 
 const grupos = [
-  { titulo: "Design", itens: ["Figma", "Photoshop", "UI Design"] },
+  { titulo: "Design", itens: ["Figma", "Photoshop", "Illustrator", "UI Design"] },
   { titulo: "Front End", itens: ["CSS", "JavaScript", "React", "Vue", "Next.js", "Tailwind"] },
   { titulo: "Back end e CMS", itens: ["Node.js", "MySQL", "PHP", "WordPress", "Drupal"] },
-  { titulo: "Marketing", itens: ["Google Ads"] },
+  { titulo: "Marketing / Dados", itens: ["Google Analytics", "Google Ads", "Google Data Studio"] },
 ];
 
 export function Ferramentas() {
@@ -16,7 +16,7 @@ export function Ferramentas() {
         <span className="prancha__no" aria-hidden="true">
           05
         </span>
-        <h2 id="h-ferramentas">Ferramentas</h2>
+        <h2 id="h-ferramentas">Habilidades</h2>
         <p>As mesmas ferramentas servem ao layout e ao código.</p>
       </header>
       <div className="spec">
@@ -30,7 +30,7 @@ export function Ferramentas() {
             </ul>
             {i === grupos.length - 1 && (
               <Comentario n={6} style={{ left: 0, top: 132 }}>
-                Lista curta de propósito: uso o que resolve.
+                Tudo o que utilizo no dia-a-dia para criar e manter um projeto.
               </Comentario>
             )}
           </div>

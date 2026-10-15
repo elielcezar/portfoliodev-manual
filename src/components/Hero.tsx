@@ -22,7 +22,7 @@ export function Hero() {
           Cezar
         </span>
         <Comentario n={1} className="comentario--nome">
-          Tracking de −0.05em. Apertado, mas ainda legível.
+          Olá, seja bem vindo(a) ao meu portfolio!
         </Comentario>
       </h1>
       <figure className="retrato" data-host="">
@@ -39,15 +39,12 @@ export function Hero() {
           <i />
           <em data-medir="img">718 × 982</em>
         </span>
-        <Comentario n={2} className="comentario--r" style={{ right: 0, bottom: -74 }} esquerda>
-          Área de proteção de <span data-token="--prot">22 px</span>, como manda o manual.
-        </Comentario>
+       
       </figure>
       <div className="hero__norma">
         <p className="hero__role">Front End Developer &amp; UI Designer</p>
         <p className="hero__pitch">
-          Designer gráfico que migrou para a web quando isso aqui ainda era tudo mato. Desde 2007 eu desenho e construo
-          interfaces, e hoje lidero um time de 5 desenvolvedores.
+        Sou um designer gráfico que migrou pra área de web há 15 anos. Já desenvolvi projetos para grandes marcas como <strong>Assaí, McDonald's, Lojas Americanas e Subway</strong>. Tenho facilidade para trabalhar em squads multidisciplinares e posso conduzir projetos de ponta a ponta: concepção, requisitos, design, desenvolvimento e publicação em servidor VPS.
         </p>
         <div className="actions" data-host="">
           <span className="nota chip" aria-hidden="true" style={{ top: -26, left: 0 }}>
@@ -79,11 +76,13 @@ export function Hero() {
         </div>
         <div>
           <dt>Idiomas</dt>
-          <dd>Português, inglês avançado, espanhol básico</dd>
+          <dd>Português</dd>
+          <dd>Inglês [intermediário]</dd>
+          <dd>Espanhol [básico]</dd>
         </div>
       </dl>
       <p className="legenda">
-        <b>Prancha 01</b> Assinatura principal
+        <b>Frame 01</b> Assinatura principal
       </p>
     </section>
   );
