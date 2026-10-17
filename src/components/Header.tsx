@@ -1,19 +1,54 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Icone } from "./Icones";
 
 const STORAGE_KEY = "manual-malha";
 
 export function Header() {
   const [stuck, setStuck] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [marcacoes, setMarcacoes] = useState(true);
+  const hiddenNow = useRef(false);
+
+  const mostrar = () => {
+    hiddenNow.current = false;
+    setHidden(false);
+  };
 
   useEffect(() => {
-    const onScroll = () => setStuck(window.scrollY > 8);
-    onScroll();
+    let last = window.scrollY;
+    let frame = 0;
+    let stuckNow = false;
+
+    const onScroll = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const y = window.scrollY;
+        const delta = y - last;
+        const nextStuck = y > 8;
+        let nextHidden = hiddenNow.current;
+        if (y <= 72) nextHidden = false;
+        else if (delta > 6) nextHidden = true;
+        else if (delta < -6) nextHidden = false;
+
+        if (nextStuck !== stuckNow) {
+          stuckNow = nextStuck;
+          setStuck(nextStuck);
+        }
+        if (nextHidden !== hiddenNow.current) {
+          hiddenNow.current = nextHidden;
+          setHidden(nextHidden);
+        }
+        last = y;
+      });
+    };
+
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   useEffect(() => {
@@ -47,7 +82,10 @@ export function Header() {
   }, []);
 
   return (
-    <header className={`top${stuck ? " is-stuck" : ""}`}>
+    <header
+      className={`top${stuck ? " is-stuck" : ""}${hidden ? " is-hidden" : ""}`}
+      onFocus={mostrar}
+    >
       <div className="wrap top__in">
         <a className="brand" href="#inicio">
           <span>Portfolio [2026v2]</span>

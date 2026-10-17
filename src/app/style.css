@@ -148,11 +148,16 @@ main,
   z-index: 20;
   background: rgb(255 255 255 / 0.94);
   border-bottom: 1px solid transparent;
-  transition: border-color 0.3s;
+  transition: border-color 0.3s, transform 0.4s var(--ease);
 }
 
 .top.is-stuck {
   border-bottom-color: var(--black);
+}
+
+.top.is-hidden {
+  transform: translateY(-100%);
+  pointer-events: none;
 }
 
 .top__in {

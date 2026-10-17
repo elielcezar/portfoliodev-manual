@@ -15,7 +15,7 @@ export const PROJETOS: Projeto[] = [
   {
     "id": "assai",
     "nome": "Assaí Atacadista",
-    "img": "assai.png",
+    "img": "assai.webp",
     "w": 980,
     "h": 4291,
     "alt": "Página inicial do site do Assaí Atacadista",
@@ -25,7 +25,7 @@ export const PROJETOS: Projeto[] = [
   {
     "id": "retail-media",
     "nome": "Portal Retail Media Assaí",
-    "img": "retail-media.png",
+    "img": "retail-media.webp",
     "w": 980,
     "h": 2476,
     "alt": "Portal Retail Media do Assaí",
@@ -35,7 +35,7 @@ export const PROJETOS: Projeto[] = [
   {
     "id": "churrasco",
     "nome": "Churrasco Assaí",
-    "img": "churrasco.png",
+    "img": "churrasco.webp",
     "w": 980,
     "h": 2819,
     "alt": "Site Churrasco Assaí",
@@ -45,7 +45,7 @@ export const PROJETOS: Projeto[] = [
   {
     "id": "fort",
     "nome": "Fort Atacadista",
-    "img": "fort-thumb_v2.webp",
+    "img": "fort.webp",
     "w": 900,
     "h": 639,
     "alt": "Site do Fort Atacadista",
@@ -55,7 +55,7 @@ export const PROJETOS: Projeto[] = [
   {
     "id": "psicodelia",
     "nome": "Psicodelia",
-    "img": "psicodelia-thumb2_v2.webp",
+    "img": "psicodelia.webp",
     "w": 900,
     "h": 639,
     "alt": "Site Psicodelia",
@@ -65,7 +65,7 @@ export const PROJETOS: Projeto[] = [
   {
     "id": "task-list",
     "nome": "Task List",
-    "img": "task-thumb2_v2.webp",
+    "img": "task.webp",
     "w": 900,
     "h": 639,
     "alt": "Landing page do aplicativo Task List",
@@ -73,19 +73,9 @@ export const PROJETOS: Projeto[] = [
     "url": "https://ecwd.cloud/task/"
   },
   {
-    "id": "truss",
-    "nome": "Truss Professional",
-    "img": "truss.webp",
-    "w": 450,
-    "h": 270,
-    "alt": "Site da Truss Professional",
-    "texto": "Portal para franqueados do grupo Boticário confirmarem o recebimento de materiais da marca. Ao escanear o QR code da embalagem, o franqueado confirma a chegada do material e vê os detalhes da ação promocional.",
-    "url": "https://meupdv.ticcolor.com.br/app/"
-  },
-  {
     "id": "dh-law",
     "nome": "DH Law",
-    "img": "dhlaw-thumb_v2.webp",
+    "img": "dhlaw.webp",
     "w": 900,
     "h": 639,
     "alt": "Site do escritório DH Law",
@@ -95,7 +85,7 @@ export const PROJETOS: Projeto[] = [
   {
     "id": "fora-dos-autos",
     "nome": "Fora dos Autos",
-    "img": "fora-thumb_v2.webp",
+    "img": "fora.webp",
     "w": 900,
     "h": 639,
     "alt": "Site Fora dos Autos",
@@ -105,7 +95,7 @@ export const PROJETOS: Projeto[] = [
   {
     "id": "pura-web",
     "nome": "Pura Web",
-    "img": "pura-thumb_v2.webp",
+    "img": "puraweb.webp",
     "w": 900,
     "h": 639,
     "alt": "Site Pura Web",
@@ -115,7 +105,7 @@ export const PROJETOS: Projeto[] = [
   {
     "id": "detail",
     "nome": "Detail · Casa das Capotas",
-    "img": "detail-thumb_v2.webp",
+    "img": "detail.webp",
     "w": 500,
     "h": 355,
     "alt": "Site Detail, da Casa das Capotas",
