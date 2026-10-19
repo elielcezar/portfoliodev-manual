@@ -235,6 +235,140 @@ main,
   color: var(--white);
 }
 
+/* mobile menu: hamburger and drawer sliding in from the left */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 0 9px;
+  border: 1px solid var(--black);
+  background: var(--white);
+  cursor: pointer;
+}
+
+.burger span {
+  display: block;
+  height: 2px;
+  background: var(--black);
+}
+
+.gaveta {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+}
+
+.gaveta.is-open {
+  pointer-events: auto;
+}
+
+.gaveta__fundo {
+  position: absolute;
+  inset: 0;
+  background: rgb(17 17 17 / 0.42);
+  opacity: 0;
+  transition: opacity 0.35s var(--ease);
+}
+
+.gaveta.is-open .gaveta__fundo {
+  opacity: 1;
+}
+
+.gaveta__painel {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: min(86vw, 360px);
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--side) 28px;
+  background: var(--white);
+  border-right: 2px solid var(--black);
+  overflow-y: auto;
+  transform: translateX(-100%);
+  transition: transform 0.45s var(--ease);
+}
+
+.gaveta.is-open .gaveta__painel {
+  transform: none;
+}
+
+.gaveta__topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.gaveta__rotulo {
+  font: 600 0.72rem/1 var(--text);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.gaveta__fechar {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--black);
+  background: var(--black);
+  cursor: pointer;
+}
+
+.gaveta__fechar span {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 50%;
+  height: 2px;
+  background: var(--white);
+  rotate: 45deg;
+}
+
+.gaveta__fechar span + span {
+  rotate: -45deg;
+}
+
+.gaveta__lista {
+  margin-top: 12px;
+}
+
+.gaveta__lista a {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--black);
+  font: 900 2rem/1 var(--display);
+  letter-spacing: -0.03em;
+}
+
+.gaveta__lista b {
+  min-width: 1.6em;
+  font: 800 0.95rem/1 var(--display);
+  color: var(--blue);
+  font-variant-numeric: tabular-nums;
+}
+
+.gaveta__lista a:active {
+  background: var(--blue-mist);
+}
+
+.gaveta__cv {
+  margin-top: 28px;
+  justify-content: space-between;
+}
+
+.menu-aberto,
+.menu-aberto body {
+  overflow: hidden;
+}
+
 /* buttons */
 .btn {
   display: inline-flex;
@@ -930,6 +1064,24 @@ main,
     display: none;
   }
 
+  .burger {
+    display: flex;
+    order: 1;
+    margin-left: auto;
+  }
+
+  .brand span {
+    display: inline;
+    margin-left: 0;
+    color: var(--black);
+  }
+
+  .top__in > .toggle,
+  .top__in > .btn,
+  #sistema {
+    display: none;
+  }
+
   .toggle {
     margin-left: auto;
   }
@@ -1034,11 +1186,18 @@ main,
   }
 
   .retrato {
-    grid-column: 5 / 13;
+    display: none;
   }
 
   .hero__spec {
-    grid-column: 1 / 5;
+    grid-column: 1 / 13;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--gutter);
+    padding-top: 28px;
+  }
+
+  .hero__spec div:last-child {
+    grid-column: 1 / -1;
   }
 
   .hero__spec dd {

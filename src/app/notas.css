@@ -620,6 +620,14 @@
   visibility: hidden;
 }
 
+/* the outer margin only exists on very wide screens; on small ones the hidden
+   originals would still stretch the page sideways */
+@media (max-width: 900px) {
+  .nota.comentario {
+    display: none;
+  }
+}
+
 @media (max-width: 600px) {
   .nota--respiro,
   .nota--pad {
@@ -837,5 +845,17 @@
 
   #sistema .ds__cores li {
     grid-column: span 6;
+  }
+}
+
+/* mobile: keep the drawn rules, drop the labels and annotation chips */
+@media (max-width: 600px) {
+  .nota {
+    display: none;
+  }
+
+  .sig__line[data-cota]::after {
+    padding-top: 0;
+    font-size: 0;
   }
 }
